@@ -1,13 +1,96 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 3rem;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 2%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.topcontainer {
+  background-image: url('images/background.jpg');
+  height: 10%;
+  background-position: center;
+  background-size: cover;
+}
+
+.intro {
+  width: 100%;
+  background-color: #E6E6E6;
+  opacity: 0.6;
+}
+
+.instructions{
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 5%
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+#navbarSupportedContent {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding: 0 10px;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  margin: 1% 2% 1% 0;
+}
+
+.hstate:hover {
+  color: #00EAD3;
+}
+
+a:hover {
+  color: #00EAD3;
+}
+
+.fas:hover {
+  color: #00EAD3;
+}
+
+.endcopyright {
+  background-color: black;
+}
+
+.copyright {
+  color: white;
+  font-size: 0.5rem;
+  padding-bottom: 1%;
 }

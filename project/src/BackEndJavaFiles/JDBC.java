@@ -1,3 +1,5 @@
+package BackEndJavaFiles;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,6 +11,7 @@ public class JDBC{
         String username = "root";
         String password = "Meeper101!";
         try{
+            //for this to run, need to install BackEndJavaFiles.JDBC driver jar file and add it to path
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url,username,password);
 

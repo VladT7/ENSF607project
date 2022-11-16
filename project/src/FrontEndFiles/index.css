@@ -34,14 +34,14 @@ a {
 }
 
 .topcontainer {
-  background-image: url('images/background.jpg');
-  height: 10%;
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 
 .intro {
   width: 100%;
+  height: 100%;
   background-color: #E6E6E6;
   opacity: 0.6;
 }
@@ -49,7 +49,6 @@ a {
 .instructions{
     text-align: left;
     padding-left: 5%;
-    padding-top: 5%
 }
 
 .navbar-brand {
@@ -87,6 +86,7 @@ a:hover {
 
 .endcopyright {
   background-color: black;
+  text-align:center;
 }
 
 .copyright {

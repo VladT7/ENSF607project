@@ -23,19 +23,21 @@ function AllCourses() {
 
     return (
         <>
-            <div className='allCourses'>
+        <div className='hero-container'>
+        <div className='allCourses'>
             <h1>The List of available courses are:</h1>
             <ul>
                 {courses.map(item => (
                     <li>                        
                         <h1> Course name = {item.name} </h1>
-                        <p> start-Time = {item.startTime} </p>
-                        <p>end-time = {item.endTime}</p>
-                        <p>capacity = {item.capacity}</p>
+                        <p> Start Date = {item.startTime} </p>
+                        <p>End Date = {item.endTime}</p>
+                        <p>Capacity = {item.capacity}</p>
                     </li>
                 ))}
             </ul>
             </div>
+        </div>            
         </>
     );
 }

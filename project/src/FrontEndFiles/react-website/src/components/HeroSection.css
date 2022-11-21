@@ -8,17 +8,18 @@ image {
 
 .hero-container{
     background-image: url('./../images/Calgary.jpg');    
-    height: 100vh;
+    height: auto;
     width: 100%;    
     background-position: center;
     background-size: cover;
 }
 
 .blur{
-    width: 40%;
+    width: 50%;
+    height: auto;
     background-color: #E6E6E6;
-    opacity: 0.6;
-    margin-left: 47%;
+    opacity: 0.7;
+    margin-left: auto;
     padding: 2% 2% 15% 2%;
     justify-content: center;
     font-size: larger;
@@ -26,6 +27,7 @@ image {
 
 .allCourses{
     width: 50%;
+    height: auto;
     background-color: #d9f8f7;
     opacity: 0.7;
     margin-left: auto;

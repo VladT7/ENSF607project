@@ -24,7 +24,7 @@ function AllCourses() {
         <>
         <div className='hero-container'>
         <div className='allCourses'>
-            <h1>The List of available courses are:</h1>
+            <h1>Courses currently offered: </h1>
             <ul>
                 {courses.map(item => (                    
                     <li>                        
@@ -32,6 +32,7 @@ function AllCourses() {
                         <p> Start Date = {item.startTime} </p>
                         <p>End Date = {item.endTime}</p>
                         <p>Capacity = {item.capacity}</p>
+                        {/* <p>Pre-requisites = {item.prerequisites}</p> */}
                     </li>
                 ))}
             </ul>

@@ -1,6 +1,5 @@
 import '../../App.css';
 import React, { useState, useEffect } from 'react';
-import './AllCourses.css';
 
 
 function AllCourses() {
@@ -27,7 +26,7 @@ function AllCourses() {
         <div className='allCourses'>
             <h1>The List of available courses are:</h1>
             <ul>
-                {courses.map(item => (
+                {courses.map(item => (                    
                     <li>                        
                         <h1> Course name = {item.name} </h1>
                         <p> Start Date = {item.startTime} </p>

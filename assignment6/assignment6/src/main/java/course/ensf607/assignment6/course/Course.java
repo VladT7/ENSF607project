@@ -42,12 +42,12 @@ public class Course implements Serializable {
     )
     private Set<Student> enrolledStudents = new HashSet<>();
 
-    private Set<Course> prerequisites = new HashSet<>();
+    // private Set<Course> prerequisites = new HashSet<>();
 
     public Course() {
     }
 
-    public Course(Long id, String name, LocalDate startTime, LocalDate endTime, Integer capacity, Boolean hasPrerequisite, Set<Student> enrolledStudents,Set<Course> prerequisites) {
+    public Course(Long id, String name, LocalDate startTime, LocalDate endTime, Integer capacity, Boolean hasPrerequisite, Set<Student> enrolledStudents) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;
@@ -55,17 +55,19 @@ public class Course implements Serializable {
         this.capacity = capacity;
         this.hasPrerequisite = hasPrerequisite;
         this.enrolledStudents = enrolledStudents;       
-        this.prerequisites = prerequisites; 
+        // this.prerequisites = prerequisites; 
+        // ,Set<Course> prerequisites
     }
 
-    public Course(String name, LocalDate startTime, LocalDate endTime, Integer capacity, Boolean hasPrerequisite, Set<Student> enrolledStudents,Set<Course> prerequisites) {
+    public Course(String name, LocalDate startTime, LocalDate endTime, Integer capacity, Boolean hasPrerequisite, Set<Student> enrolledStudents) {
         this.name = name;
         this.startTime = startTime;
         this.endTime = endTime;
         this.capacity = capacity;
         this.hasPrerequisite = hasPrerequisite;
         this.enrolledStudents = enrolledStudents;
-        this.prerequisites = prerequisites; 
+        // this.prerequisites = prerequisites; 
+        // ,Set<Course> prerequisites
     }
 
     public Long getId() {
@@ -126,25 +128,25 @@ public class Course implements Serializable {
         return enrolledStudents;
     }
 
-    public Set<Course> getprerequisites() {
-        return prerequisites;
-    }
+    // public Set<Course> getprerequisites() {
+    //     return prerequisites;
+    // }
 
     public Course setEnrolledStudents(Set<Student> enrolledStudents) {
         this.enrolledStudents = enrolledStudents;
         return this;
     }
 
-    public Course setPrerequisites(Set<Course> prerequisites) {
-        this.prerequisites = prerequisites;
-        return this;
-    }
+    // public Course setPrerequisites(Set<Course> prerequisites) {
+    //     this.prerequisites = prerequisites;
+    //     return this;
+    // }
 
     public void enrolledStudents(Student student) {
         enrolledStudents.add(student);
     }
 
-    public void prerequisites(Course course) {
-        prerequisites.add(course);
-    }
+    // public void prerequisites(Course course) {
+    //     prerequisites.add(course);
+    // }
 }

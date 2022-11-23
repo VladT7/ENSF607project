@@ -42,4 +42,14 @@ public class CourseController {
         courseService.updateCourse(course);
         return course;
     }
+
+    // @PutMapping("{courseId}/course/{preReqId}")
+    // public Course addPrerequisiteToCourse(@PathVariable Long courseId, @PathVariable Long preReqId) {
+    //     Course course = courseService.getCourseById(courseId);
+    //     Course prereqCourse = courseService.getCourseById(preReqId);        
+    //     course.prerequisites(prereqCourse);
+    //     courseService.updateCourse(course);
+    //     return course;
+    // }
+
 }

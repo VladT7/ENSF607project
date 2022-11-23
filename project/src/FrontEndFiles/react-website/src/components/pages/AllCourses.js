@@ -32,6 +32,7 @@ function AllCourses() {
                         <p> Start Date = {item.startTime} </p>
                         <p>End Date = {item.endTime}</p>
                         <p>Capacity = {item.capacity}</p>
+                        <p>Enrolled Students = {item.enrolledStudents[0].id}</p> 
                         {/* <p>Pre-requisites = {item.prerequisites}</p> */}
                     </li>
                 ))}

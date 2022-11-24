@@ -1,7 +1,10 @@
-package course.ensf607.assignment6.student;
+package course.ensf607.assignment6.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import course.ensf607.assignment6.Entities.Student;
+import course.ensf607.assignment6.Services.StudentService;
 
 import java.util.List;
 

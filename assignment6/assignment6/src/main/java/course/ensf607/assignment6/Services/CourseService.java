@@ -1,7 +1,10 @@
-package course.ensf607.assignment6.course;
+package course.ensf607.assignment6.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import course.ensf607.assignment6.Entities.Course;
+import course.ensf607.assignment6.Repos.CourseRepository;
 
 import java.util.List;
 import java.util.Optional;

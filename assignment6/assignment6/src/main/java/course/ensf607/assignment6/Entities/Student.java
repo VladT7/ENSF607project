@@ -1,7 +1,6 @@
-package course.ensf607.assignment6.student;
+package course.ensf607.assignment6.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import course.ensf607.assignment6.course.Course;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,15 +12,8 @@ import java.util.Set;
 public class Student implements Serializable {
 
     @Id
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
-    )
+    @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long id;
 
     private String username;

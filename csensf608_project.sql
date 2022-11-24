@@ -119,18 +119,18 @@ CREATE TABLE OFFERINGS(
 INSERT INTO OFFERINGS(OfferingID, Teacher, Semester, Section, Year_offered, CourseID)
 VALUES
 ( 1, "Yvves Pauchard", "Summer", "1", "2022", 1),
-( 2, "Maan Khedr ", "Summer", "1", "2022", 2),
+( 2, "Maan Khedr ", "Summer", "1", "2021", 2),
 ( 3, "Maan Khedr", "Fall", "1", "2022", 3),
 ( 4, "Mohammed Moshirpour", "Fall", "1", "2022", 4),
-( 5, "Jaspreet Kaur", "Fall", "1", "2022", 5),
+( 5, "Jaspreet Kaur", "Fall", "1", "2019", 5),
 ( 6, "Vikram Kumar", "Fall", "1", "2022", 6),
-( 7, "Gias Uddin", "Fall", "1", "2022",7),
+( 7, "Gias Uddin", "Fall", "1", "2023",7),
 ( 8, "Mahmood Moussavi", "Fall", "1", "2022", 8),
-( 9, "Maan Khedr", "Winter", "1", "2022", 9),
+( 9, "Maan Khedr", "Winter", "1", "2018", 9),
 ( 10, "Maan Khedr", "Winter", "1", "2022", 10),
-( 11, "Steve Jobs", "Winter", "1", "2022", 11),
-( 12, "George Washington", "Winter", "1", "2022", 12),
-( 13, "Donald Trump", "Winter", "1", "2022", 13),
+( 11, "Steve Jobs", "Winter", "1", "2021", 11),
+( 12, "George Washington", "Winter", "1", "2023", 12),
+( 13, "Donald Trump", "Winter", "1", "2019", 13),
 ( 14, "Elon Musk", "Winter", "1", "2022", 13);
 
 DROP TABLE IF EXISTS ENROLS;

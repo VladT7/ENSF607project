@@ -8,7 +8,7 @@ import course.ensf607.assignment6.course.Course;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
+@CrossOrigin
 @RestController
 @RequestMapping(path = "api/v1/student")
 public class StudentController {

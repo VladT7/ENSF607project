@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 
 @RestController
@@ -60,18 +61,16 @@ public class CourseController {
     }
 
 
-    //new - trying 
+    //new - current 
     @DeleteMapping("{courseName}/students/{studentUcid}")
     public Course derollStudentFromCourse(@PathVariable String courseName,
                                             @PathVariable String studentUcid){
         Course course = courseService.getCourseByName(courseName);
         Student student = studentService.getStudentbyUcid(studentUcid);
+
+        Set<Student> temp = course.getEnrolledStudents();
+        temp.remove(student);
         
-
-        //enrolledStudents.delete(student);
-        
-
-
         courseService.updateCourse(course);
         return course;
         

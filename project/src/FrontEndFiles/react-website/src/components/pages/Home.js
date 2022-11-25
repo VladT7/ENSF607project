@@ -1,8 +1,9 @@
 import '../../App.css';
 import React from 'react';
-
+import { useState} from 'react';
 
 function Home(){
+    const [student, setstudent] = useState('')
     return(
         <>          
         <div className='admin'> 
@@ -18,7 +19,7 @@ function Home(){
         
         <div className='admin'>       
             <h2>To find all students currently enrolled, click the button below:</h2>
-            <button type="button" className="btn btn-primary btn-lg">Find All Students </button>
+            <button onClick={handleClick} type="button" className="btn btn-primary btn-lg">Find All Students </button>
         </div>                    
         </>
     );

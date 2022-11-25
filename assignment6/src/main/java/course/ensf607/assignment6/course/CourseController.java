@@ -53,12 +53,16 @@ public class CourseController {
             @PathVariable String studentUcid) {
         Course course = courseService.getCourseByName(courseName);
         Student student = studentService.getStudentbyUcid(studentUcid);
+        if (course.getHasPrerequisite()) {
+            Set<Course> studentCourses = student.getSubjects();
+            if (!studentCourses.contains(course)) {
+                throw new IllegalStateException("You have not met the pre-requisites for this course.");
+            } else {
+                course.enrolledStudents(student);
+            }
 
-        // if(course.getHasPrerequisite()){
-        // throw new IllegalStateException("this thing has a pre-req, test ");
-        // }
+        }
 
-        course.enrolledStudents(student);
         courseService.updateCourse(course);
         return course;
     }

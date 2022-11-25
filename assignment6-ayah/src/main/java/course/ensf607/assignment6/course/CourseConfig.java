@@ -17,7 +17,7 @@ public class CourseConfig {
             Course ensf593 = new Course( "ENSF593", LocalDate.parse("2022-07-02"), LocalDate.parse("2022-08-20"), 60, false, null);
             Course ensf594 = new Course( "ENSF594", LocalDate.parse("2022-07-02"), LocalDate.parse("2022-08-20"), 60, false, null);
             Course ensf608 = new Course( "ENSF608", LocalDate.parse("2022-09-04"), LocalDate.parse("2022-12-10"), 60, true, null);
-            Course ensf611 = new Course( "ENSF511", LocalDate.parse("2022-09-04"), LocalDate.parse("2022-12-10"), 60, true, null);
+            Course ensf611 = new Course( "ENSF611", LocalDate.parse("2022-09-04"), LocalDate.parse("2022-12-10"), 60, true, null);
             
             // Course ensf611 = new Course("ENSF611");
             // Course ensf612 = new Course("ENSF612");

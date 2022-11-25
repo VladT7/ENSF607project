@@ -40,7 +40,7 @@ public class Course implements Serializable {
     }
 
     public Course(Long id, String name, LocalDate startTime, LocalDate endTime, Integer capacity,
-            Boolean hasPrerequisite, Set<Student> enrolledStudents) {
+            Boolean hasPrerequisite, Set<Student> enrolledStudents, Set<Course> prereqs) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;
@@ -48,16 +48,18 @@ public class Course implements Serializable {
         this.capacity = capacity;
         this.hasPrerequisite = hasPrerequisite;
         this.enrolledStudents = enrolledStudents;
+        this.prerequisites = prereqs;
     }
 
     public Course(String name, LocalDate startTime, LocalDate endTime, Integer capacity, Boolean hasPrerequisite,
-            Set<Student> enrolledStudents) {
+            Set<Student> enrolledStudents, Set<Course> prereqs) {
         this.name = name;
         this.startTime = startTime;
         this.endTime = endTime;
         this.capacity = capacity;
         this.hasPrerequisite = hasPrerequisite;
         this.enrolledStudents = enrolledStudents;
+        this.prerequisites = prereqs;
     }
 
     public Long getId() {

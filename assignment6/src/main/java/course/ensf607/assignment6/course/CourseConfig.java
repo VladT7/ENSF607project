@@ -24,7 +24,7 @@ public class CourseConfig {
 
                         Course ensf594 = new Course("ENSF594", LocalDate.parse("2022-07-02"),
                                         LocalDate.parse("2022-08-20"), 60,
-                                        false, null, ensf593Prereq);
+                                        true, null, ensf593Prereq);
                         Course ensf608 = new Course("ENSF608", LocalDate.parse("2022-09-04"),
                                         LocalDate.parse("2022-12-10"), 60,
                                         true, null, null);

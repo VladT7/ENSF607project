@@ -49,9 +49,6 @@ SELECT c.courseName, p.Prereq1, p.Prereq2, p.Prereq3
 FROM COURSE AS c
 INNER JOIN PREREQUISITES as p ON p.CourseID = c.CourseID;
 
-
-
-
 #	An update operation with any necessary triggers
 
 #	A deletion operation with any necessary triggers

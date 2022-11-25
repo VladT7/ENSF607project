@@ -8,7 +8,6 @@ import java.util.Optional;
 
 //service layer is responcible for business logic
 
-
 @Service
 public class StudentService {
 
@@ -19,9 +18,8 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-
     public List<Student> getAllStudents() {
-        return studentRepository.findAll(); //findAll returns a list
+        return studentRepository.findAll(); // findAll returns a list
     }
 
     public void addNewStudent(Student student) {
@@ -32,22 +30,21 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    // public Student getStudentById(Long studentId) {
-    //     Optional<Student> studentById = studentRepository.findById(studentId);
-    //     if (!studentById.isPresent()) {
-    //         throw new IllegalStateException("student does'nt exist!");
-    //     }
-    //     return studentById.get();
-    // }
+    public Student getStudentById(Long studentId) {
+        Optional<Student> studentById = studentRepository.findById(studentId);
+        if (!studentById.isPresent()) {
+            throw new IllegalStateException("student does'nt exist!");
+        }
+        return studentById.get();
+    }
 
-
-    //new
-    public Student getStudentbyUcid(String studentUcid){
+    // new
+    public Student getStudentbyUcid(String studentUcid) {
         Optional<Student> studentByUcid = studentRepository.findStudentByUcid(studentUcid);
-        if(!studentByUcid.isPresent()){
+        if (!studentByUcid.isPresent()) {
             throw new IllegalStateException("student Ucid doesn't exist -- new");
         }
-        
+
         return studentByUcid.get();
     }
 }

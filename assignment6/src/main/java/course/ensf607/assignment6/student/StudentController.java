@@ -15,7 +15,7 @@ public class StudentController {
 
     private final StudentService studentService;
 
-    @Autowired //studentService will be intantiated for us automatically
+    @Autowired // studentService will be intantiated for us automatically
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
@@ -31,13 +31,15 @@ public class StudentController {
     }
 
     @GetMapping("students/{studentUcid}")
-    public List<String> getStudentEnrollments(@PathVariable String studentUcid) {
+    public List<Course> getStudentEnrollments(@PathVariable String studentUcid) {
         Student selectedStudent = studentService.getStudentbyUcid(studentUcid);
         Set<Course> sectionList = selectedStudent.getSubjects();
-        List<String> studentCourses = new ArrayList<String>();
-        for (Course c : sectionList) {
-            studentCourses.add(c.getName());
-        }
-        return studentCourses;
+        List<Course> returnCourses = new ArrayList<>(sectionList);
+        // List<String> studentCourses = new ArrayList<String>();
+        // for (Course c : sectionList) {
+        // studentCourses.add(c.getName());
+        // }
+        return returnCourses;
+        // return sectionList;
     }
 }

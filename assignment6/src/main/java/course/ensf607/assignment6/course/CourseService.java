@@ -40,14 +40,14 @@ public class CourseService {
         return courseById.get();
     }
 
-    //new
+    // new
 
-    public Course getCourseByName(String courseName){
+    public Course getCourseByName(String courseName) {
         Optional<Course> courseByName = courseRepository.findByName(courseName);
-        if(!courseByName.isPresent()){
+        if (!courseByName.isPresent()) {
             throw new IllegalStateException("Course Name doesn't exist -- new");
         }
-        
+
         return courseByName.get();
     }
 }

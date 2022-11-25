@@ -63,6 +63,12 @@ public class CourseController {
         return course;
     }
 
+    @GetMapping("student/{studentId}")
+    public Set<Course> getCoursesTakenByStudent(Long studentId) {
+        Student student = studentService.getStudentById(studentId);
+        return student.getSubjects();
+    }
+
     // new - current
     @DeleteMapping("{courseName}/students/{studentUcid}")
     public Course derollStudentFromCourse(@PathVariable String courseName,

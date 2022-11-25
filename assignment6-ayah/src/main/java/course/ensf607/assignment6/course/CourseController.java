@@ -55,6 +55,11 @@ public class CourseController {
                                          @PathVariable String studentUcid) {
         Course course = courseService.getCourseByName(courseName);
         Student student = studentService.getStudentbyUcid(studentUcid);
+
+        if(course.getHasPrerequisite()){
+            throw new IllegalStateException("this thing has a pre-req, test ");
+        }
+
         course.enrolledStudents(student);
         courseService.updateCourse(course);
         return course;

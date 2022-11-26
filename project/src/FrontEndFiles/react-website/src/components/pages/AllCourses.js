@@ -32,7 +32,7 @@ function AllCourses() {
                         <p> Start Date = {item.startTime} </p>
                         <p>End Date = {item.endTime}</p>
                         <p>Capacity = {item.capacity}</p>
-                        <p>{item.prerequisites.map(prereq => (
+                        <p>{item.prerequisites?.map(prereq => (
                             <li>
                                 <p>Prereq = {prereq.name}</p>
                             </li>

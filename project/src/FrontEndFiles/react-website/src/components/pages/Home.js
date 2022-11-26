@@ -2,6 +2,7 @@ import '../../App.css';
 import React from 'react';
 import { useState } from 'react';
 import AddCourseForm from '../AddCourseForm';
+import AddPrereqForm from '../AddPrereqForm';
 
 function Home() {
     const [student, setstudent] = useState([]);
@@ -78,6 +79,10 @@ function Home() {
 
                 <h2>To add a new course to the course catalogue:  </h2>
                 <AddCourseForm/> 
+
+                <h2>Too add a pre-requisite to an existing course: </h2>
+                <p>Please note: both the course and the pre-req must exist in the database. If they don't, please create them first!</p>
+                <AddPrereqForm/>
             </div>
 
         </>

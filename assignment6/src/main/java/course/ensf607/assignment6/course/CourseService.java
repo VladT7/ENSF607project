@@ -1,6 +1,7 @@
 package course.ensf607.assignment6.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class CourseService {
     }
 
     public List<Course> getAllCourses() {
-        return courseRepository.findAll();
+        return courseRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
     }
 
     public void addNewCourse(Course course) {

@@ -5,6 +5,7 @@ import course.ensf607.assignment6.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -54,11 +55,39 @@ public class CourseController {
             @PathVariable String studentUcid) {
         Course course = courseService.getCourseByName(courseName);
         Student student = studentService.getStudentbyUcid(studentUcid);
-        Set<Course> studentCourses = student.getSubjects();
+        if (course.getHasPrerequisite()) {
+            Set<Course> studentCourses = student.getSubjects();
+            Set<Course> prereqsOfCourse = course.getPrerequisites();
+            Set<String> courseNames = new HashSet<>();
+            Set<String> prereqsNames = new HashSet<>();
 
-        if (course.getHasPrerequisite() && !studentCourses.contains(course)) {
-            System.out.println("//////////\n" + course + "\n" + student);
-            throw new IllegalStateException("You have not met the pre-requisites for this course.");
+            // cycle through student courses and get their names
+            for (Course singleCourse : studentCourses) {
+                courseNames.add(singleCourse.getName());
+            }
+
+            // cycle through prereqs and get their names
+            for (Course singlePrereq : prereqsOfCourse) {
+                prereqsNames.add(singlePrereq.getName());
+            }
+
+            // boolean meetsPrereq = courseNames.contains(prereqsNames);
+            boolean meetsPrereq = studentCourses.contains(prereqsOfCourse);
+
+            if (meetsPrereq) {
+                course.enrolledStudents(student);
+                courseService.updateCourse(course);
+            } else {
+
+                throw new IllegalStateException("You have not met the pre-requisites for this course.");
+            }
+
+            // for (String prereqName : prereqsNames) {
+            // for (String studentCourseName : courseNames) {
+
+            // }
+            // }
+
         } else {
             course.enrolledStudents(student);
             courseService.updateCourse(course);

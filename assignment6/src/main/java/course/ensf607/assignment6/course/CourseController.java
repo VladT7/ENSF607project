@@ -97,13 +97,15 @@ public class CourseController {
 
     }
 
-    @PutMapping("{courseId}/course/{preReqId}")
-    public void addPrerequisiteToCourse(@PathVariable Long courseId,
-            @PathVariable Long preReqId) {
-        Course course = courseService.getCourseById(courseId);
-        Course prereqCourse = courseService.getCourseById(preReqId);
+    // @PutMapping("{courseId}/course/{preReqId}")
+    @PutMapping("{courseName}/course/{prereqName}")
+    public void addPrerequisiteToCourse(@PathVariable String courseName,
+            @PathVariable String prereqName) {
+        // Course course = courseService.getCourseById(courseId);
+        // Course prereqCourse = courseService.getCourseById(preReqId);
+        Course course = courseService.getCourseByName(courseName);
+        Course prereqCourse = courseService.getCourseByName(prereqName);
         course.prerequisites(prereqCourse);
         courseService.updateCourse(course);
-        // return course;
     }
 }

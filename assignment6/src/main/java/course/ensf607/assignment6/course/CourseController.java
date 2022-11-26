@@ -55,24 +55,11 @@ public class CourseController {
             @PathVariable String studentUcid) {
         Course course = courseService.getCourseByName(courseName);
         Student student = studentService.getStudentbyUcid(studentUcid);
+
         if (course.getHasPrerequisite()) {
             Set<Course> studentCourses = student.getSubjects();
             Set<Course> prereqsOfCourse = course.getPrerequisites();
-            Set<String> courseNames = new HashSet<>();
-            Set<String> prereqsNames = new HashSet<>();
-
-            // cycle through student courses and get their names
-            for (Course singleCourse : studentCourses) {
-                courseNames.add(singleCourse.getName());
-            }
-
-            // cycle through prereqs and get their names
-            for (Course singlePrereq : prereqsOfCourse) {
-                prereqsNames.add(singlePrereq.getName());
-            }
-
-            // boolean meetsPrereq = courseNames.contains(prereqsNames);
-            boolean meetsPrereq = studentCourses.contains(prereqsOfCourse);
+            boolean meetsPrereq = studentCourses.containsAll(prereqsOfCourse);
 
             if (meetsPrereq) {
                 course.enrolledStudents(student);
@@ -81,12 +68,6 @@ public class CourseController {
 
                 throw new IllegalStateException("You have not met the pre-requisites for this course.");
             }
-
-            // for (String prereqName : prereqsNames) {
-            // for (String studentCourseName : courseNames) {
-
-            // }
-            // }
 
         } else {
             course.enrolledStudents(student);

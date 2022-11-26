@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "44208474-140e-4cb0-85ec-9cf9a04b9a8f",
+		"_postman_id": "3a46d7f4-4bf3-4e9a-9896-2b31f3c85ca1",
 		"name": "Assignment6",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24610306"
+		"_exporter_id": "24510226"
 	},
 	"item": [
 		{
@@ -133,10 +133,37 @@
 			"response": []
 		},
 		{
+			"name": "assignPreReqToCourse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/course/1/course/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"course",
+						"1",
+						"course",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "searchCourseByName",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
@@ -161,6 +188,14 @@
 						"123"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCoursesTakenByStudent",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}

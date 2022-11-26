@@ -2,6 +2,7 @@ import '../../App.css';
 import React from 'react';
 import { useState } from 'react';
 import AddCourseForm from '../AddCourseForm';
+import AddPrereqForm from '../AddPrereqForm';
 
 function Home() {
     const [student, setstudent] = useState([]);
@@ -62,6 +63,7 @@ function Home() {
                         </ul>
                     ))}</p>
                 </div>
+                <hr></hr>
 
                 <h2>To find all students currently enrolled, click the button below:</h2>
                 <button onClick={handleClick} type="button" className="btn btn-primary btn-lg">Find All Students </button>
@@ -75,9 +77,15 @@ function Home() {
                         ))}
                     </ul>
                 </div>
+                <hr></hr>
 
                 <h2>To add a new course to the course catalogue:  </h2>
                 <AddCourseForm/> 
+                <hr></hr>
+
+                <h2>Too add a pre-requisite to an existing course: </h2>
+                <p>Please note: both the course and the pre-req must exist in the database. If they don't, please create them first!</p>
+                <AddPrereqForm/>
             </div>
 
         </>

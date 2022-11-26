@@ -33,7 +33,7 @@ public class StudentService {
     public Student getStudentById(Long studentId) {
         Optional<Student> studentById = studentRepository.findById(studentId);
         if (!studentById.isPresent()) {
-            throw new IllegalStateException("student does'nt exist!");
+            throw new IllegalStateException("student doesn't exist!");
         }
         return studentById.get();
     }

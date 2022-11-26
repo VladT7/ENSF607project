@@ -3,6 +3,7 @@ import './HeroSection.css';
 import '../App.css';
 import {useState } from "react";
 
+
 function EnrollCourseForm() {
 
     const [name, setname] = useState('');
@@ -17,7 +18,7 @@ function EnrollCourseForm() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(enroll)
         }). then(() => {
-            console.log('i just did something');
+            alert("You've been enrolled in "+name);
             setname('');            
             setucid('');
         })

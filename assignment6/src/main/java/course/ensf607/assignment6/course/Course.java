@@ -31,7 +31,7 @@ public class Course implements Serializable {
     @JoinTable(name = "student_enrolled", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "student_id"))
     private Set<Student> enrolledStudents = new HashSet<>();
 
-    @OneToMany
+    @ManyToMany
     // @JoinTable(name = "course_prerequisites", joinColumns = @JoinColumn(name =
     // "course_id"), inverseJoinColumns = @JoinColumn(name = "prerequisites_id"))
     private Set<Course> prerequisites = new HashSet<>();

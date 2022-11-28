@@ -22,7 +22,6 @@ WHERE
         AND c.courseID = o.CourseID;
 
 #	A retrieval query with ordered results
-
 SELECT o.Year_offered, o.Semester, c.courseName
 from
 	OFFERINGS AS o

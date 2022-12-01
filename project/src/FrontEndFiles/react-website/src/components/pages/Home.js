@@ -83,7 +83,7 @@ function Home() {
                 <AddCourseForm/> 
                 <hr></hr>
 
-                <h2>Too add a pre-requisite to an existing course: </h2>
+                <h2>To add a pre-requisite to an existing course: </h2>
                 <p>Please note: both the course and the pre-req must exist in the database. If they don't, please create them first!</p>
                 <AddPrereqForm/>
             </div>

@@ -17,26 +17,22 @@ function EnrollCourseForm() {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(enroll),
-    }).then(function(response){
-        if (response.ok) {
-           alert("Great success!") ;
-        }
-        throw new Error('Error encountered');
-    }).catch(function(error){
-        alert("error encountered", error);
     })
-   
- } ;
-  //     fetch(url, {
-  //       method: "PUT",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(enroll),
-  //     }).then(() => {
-  //       alert("You've been enrolled in " + name);
-  //       setname("");
-  //       setucid("");
-  //     });
-  //   };
+      .then((result) => {
+        if (result.ok) {
+          return result.json();
+        }
+        return result.json().then((result) => {
+          throw new Error(result.error);
+        });
+      })
+      .then(() => {
+        alert("You've been enrolled in " + name);
+        setname("");
+        setucid("");
+      })
+      .catch((error) => alert(error.message + ". Are you sure you fulfilled the requirements?"));
+  };
 
   return (
     <>

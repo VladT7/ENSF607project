@@ -12,22 +12,32 @@ function AddCourseForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const course = {name, startTime, endTime, capacity, hasPrerequisite };
-    // const course = {coursename};
-    // console.log(course);
+    const course = { name, startTime, endTime, capacity, hasPrerequisite };
     console.log(JSON.stringify(course));
     fetch("http://localhost:8080/api/v1/course", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(course),
-    }).then(() => {
-      console.log("i just did something");
-      setcoursename("");
-      setstarttime("");
-      setendtime("");
-      setCapacity("");
-      setPrereq("");
-    });
+    })
+      .then((result) => {
+        if (result.ok) {
+          return result.json();
+        }
+        return result.json().then((result) => {
+          throw new Error(result.error);
+        });
+      })
+      .then(() => {
+        alert(name + " successfully added.");
+        setcoursename("");
+        setstarttime("");
+        setendtime("");
+        setCapacity("");
+        setPrereq("");
+      })
+      .catch((error) =>
+        alert(error.message + ". Are you sure you fulfilled the requirements?")
+      );
   };
 
   return (

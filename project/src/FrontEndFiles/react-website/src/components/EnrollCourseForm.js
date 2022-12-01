@@ -31,7 +31,9 @@ function EnrollCourseForm() {
         setname("");
         setucid("");
       })
-      .catch((error) => alert(error.message + ". Are you sure you fulfilled the requirements?"));
+      .catch((error) =>
+        alert(error.message + ". Are you sure you fulfilled the requirements?")
+      );
   };
 
   return (

@@ -29,7 +29,7 @@ function StudentInfo() {
             alert("Sorry, your UCID does not exist!")
             navigate('/studentinfo');
         }
-        
+
         setuserInput('');
     }
 
@@ -46,18 +46,11 @@ function StudentInfo() {
                     </div>
                 </div>
 
-               
                 {Array.isArray(course)
                     ? course.map(element => {
                         return <h2>{element.name}</h2>;
                     })
                     : null}
-                {/* // course && course?.map(item => (
-                //     <h1> {item.name} </h1>
-                // )) */}
-               
-
-
                 <hr></hr>
 
                 <EnrollCourseForm />

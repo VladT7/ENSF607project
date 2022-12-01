@@ -36,7 +36,7 @@ public class CourseService {
     public Course getCourseById(Long courseId) {
         Optional<Course> courseById = courseRepository.findById(courseId);
         if (!courseById.isPresent()) {
-            throw new IllegalStateException("Course does'nt exist!");
+            throw new IllegalStateException("Course doesn't exist!");
         }
         return courseById.get();
     }

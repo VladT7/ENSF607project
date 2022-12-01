@@ -8,6 +8,7 @@ import course.ensf607.assignment6.course.Course;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
 @CrossOrigin
 @RestController
 @RequestMapping(path = "api/v1/student")
@@ -26,8 +27,9 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerNewStudent(@RequestBody Student student) {
+    public Student registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
+        return student;
     }
 
     @GetMapping("students/{studentUcid}")
@@ -35,11 +37,6 @@ public class StudentController {
         Student selectedStudent = studentService.getStudentbyUcid(studentUcid);
         Set<Course> sectionList = selectedStudent.getSubjects();
         List<Course> returnCourses = new ArrayList<>(sectionList);
-        // List<String> studentCourses = new ArrayList<String>();
-        // for (Course c : sectionList) {
-        // studentCourses.add(c.getName());
-        // }
         return returnCourses;
-        // return sectionList;
     }
 }

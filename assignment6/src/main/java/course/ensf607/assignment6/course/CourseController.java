@@ -29,27 +29,17 @@ public class CourseController {
         return courseService.getAllCourses();
     }
 
-    // //new - works
-    // @GetMapping("{courseId}")
-    // public Course searchCourseById(@PathVariable Long courseId){
-    // // Course course = courseService.getCourseById(courseId);
-
-    // return courseService.getCourseById(courseId);
-
-    // }
-
-    // new - current
     @GetMapping("{courseName}")
     public Course searchCourseByName(@PathVariable String courseName) {
         return courseService.getCourseByName(courseName);
     }
 
     @PostMapping
-    public void registerNewCourse(@RequestBody Course course) {
+    public Course registerNewCourse(@RequestBody Course course) {
         courseService.addNewCourse(course);
+        return course;
     }
 
-    // changed
     @PutMapping("{courseName}/students/{studentUcid}")
     public Course enrollStudentToCourse(@PathVariable String courseName,
             @PathVariable String studentUcid) {
@@ -99,7 +89,7 @@ public class CourseController {
 
     // @PutMapping("{courseId}/course/{preReqId}")
     @PutMapping("{courseName}/course/{prereqName}")
-    public void addPrerequisiteToCourse(@PathVariable String courseName,
+    public Course addPrerequisiteToCourse(@PathVariable String courseName,
             @PathVariable String prereqName) {
         // Course course = courseService.getCourseById(courseId);
         // Course prereqCourse = courseService.getCourseById(preReqId);
@@ -107,5 +97,6 @@ public class CourseController {
         Course prereqCourse = courseService.getCourseByName(prereqName);
         course.prerequisites(prereqCourse);
         courseService.updateCourse(course);
+        return course;
     }
 }

@@ -24,6 +24,12 @@ function AddCourseForm() {
           return result.json();
         }
         return result.json().then((result) => {
+          alert(result.message);
+          setcoursename("");
+          setstarttime("");
+          setendtime("");
+          setCapacity("");
+          setPrereq("");
           throw new Error(result.error);
         });
       })
@@ -36,7 +42,7 @@ function AddCourseForm() {
         setPrereq("");
       })
       .catch((error) =>
-        alert(error.message + ". Are you sure you fulfilled the requirements?")
+        console.log(error)
       );
   };
 

@@ -42,7 +42,8 @@ function Home() {
         else {
             setCourse(result);
             setuserInput('');
-        }        
+        }
+        
         
     }
 

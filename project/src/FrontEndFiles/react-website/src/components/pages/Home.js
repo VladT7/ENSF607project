@@ -33,10 +33,16 @@ function Home() {
         });
 
         const result = await response.json();
-        console.log(url);
-        console.log(result);
-        setCourse(result);
-        setuserInput('');
+
+        if(result.status === 500){
+            alert(result.message)
+            console.log(result);
+            setuserInput('');
+        }
+        else {
+            setCourse(result);
+            setuserInput('');
+        }        
         
     }
 

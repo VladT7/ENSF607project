@@ -22,6 +22,10 @@ function DropCourseForm() {
           return result.json();
         }
         return result.json().then((result) => {
+          console.log(result)
+          alert(result.message)
+          setname("");
+          setucid("");
           throw new Error(result.error);
         });
       })
@@ -31,7 +35,7 @@ function DropCourseForm() {
         setucid("");
       })
       .catch((error) =>
-        alert(error.message + ". Are you sure you fulfilled the requirements?")
+        console.log(error.message)
       );
   };
 

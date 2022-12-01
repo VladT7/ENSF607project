@@ -25,6 +25,9 @@ function AddPrereqForm() {
           return result.json();
         }
         return result.json().then((result) => {
+          alert(result.message);
+          setcoursename("");
+          setPrereqname("");
           throw new Error(result.error);
         });
       })
@@ -34,7 +37,7 @@ function AddPrereqForm() {
         setPrereqname("");
       })
       .catch((error) =>
-        alert(error.message + ". Are you sure you fulfilled the requirements?")
+        console.log(error)
       );
   };
 

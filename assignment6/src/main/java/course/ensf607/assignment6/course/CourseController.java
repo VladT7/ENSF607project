@@ -80,9 +80,15 @@ public class CourseController {
         Student student = studentService.getStudentbyUcid(studentUcid);
 
         Set<Student> temp = course.getEnrolledStudents();
-        temp.remove(student);
 
-        courseService.updateCourse(course);
+        if (temp.contains(student)) {
+            temp.remove(student);
+            courseService.updateCourse(course);
+
+        } else {
+            throw new IllegalStateException("Student is not currently enrolled in the course");
+        }
+
         return course;
 
     }

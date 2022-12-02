@@ -94,6 +94,11 @@ public class CourseController {
 
     }
 
+    @DeleteMapping("{courseName}")
+    public void deleteCourse(@PathVariable String courseName) {
+        courseService.removeCourse(courseName);
+    }
+
     // @PutMapping("{courseId}/course/{preReqId}")
     @PutMapping("{courseName}/course/{prereqName}")
     public Course addPrerequisiteToCourse(@PathVariable String courseName,

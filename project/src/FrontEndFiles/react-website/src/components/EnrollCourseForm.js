@@ -11,7 +11,8 @@ function EnrollCourseForm() {
     e.preventDefault();
     const enroll = { name, ucid };
     const url =
-      "http://localhost:8080/api/v1/course/" + name + "/students/" + ucid;
+      "http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course/" + name + "/students/" + ucid;
+      // "http://localhost:8080/api/v1/course/" + name + "/students/" + ucid;
 
     fetch(url, {
       method: "PUT",

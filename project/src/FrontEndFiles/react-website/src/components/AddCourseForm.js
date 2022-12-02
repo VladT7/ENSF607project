@@ -14,7 +14,8 @@ function AddCourseForm() {
     e.preventDefault();
     const course = { name, startTime, endTime, capacity, hasPrerequisite };
     console.log(JSON.stringify(course));
-    fetch("http://localhost:8080/api/v1/course", {
+    fetch("http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course", {
+    // fetch("http://localhost:8080/api/v1/course", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(course),

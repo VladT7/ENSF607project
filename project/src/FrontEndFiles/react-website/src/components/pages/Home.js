@@ -8,7 +8,8 @@ function Home() {
     const [student, setstudent] = useState([]);
 
     const handleClick = async () => {
-        const response = await fetch('http://localhost:8080/api/v1/student', {
+        const response = await fetch('http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/student', {
+        // const response = await fetch('http://localhost:8080/api/v1/student', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -24,7 +25,8 @@ function Home() {
     const [userinput, setuserInput] = useState('');
 
     const searchCourse = async () => {
-        const url = 'http://localhost:8080/api/v1/course/' + userinput;
+        const url = 'http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course/' + userinput;
+        // const url = 'http://localhost:8080/api/v1/course/' + userinput;
         const response = await fetch(url, {
             method: 'GET',
             headers: {

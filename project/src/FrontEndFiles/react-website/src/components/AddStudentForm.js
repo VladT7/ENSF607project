@@ -11,7 +11,8 @@ function AddStudentForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { username, password, ucid };
-    fetch("http://localhost:8080/api/v1/student", {
+    fetch("http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/student", {
+    // fetch("http://localhost:8080/api/v1/student", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

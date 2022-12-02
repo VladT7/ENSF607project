@@ -33,6 +33,12 @@ public class CourseService {
         courseRepository.save(course);
     }
 
+    public void removeCourse(String courseName) {
+        Course toBeDeleted = getCourseByName(courseName);
+        courseRepository.delete(toBeDeleted);
+        // courseRepository.delete(toBeDeleted);
+    }
+
     public Course getCourseById(Long courseId) {
         Optional<Course> courseById = courseRepository.findById(courseId);
         if (!courseById.isPresent()) {

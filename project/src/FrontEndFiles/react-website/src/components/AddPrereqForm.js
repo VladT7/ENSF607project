@@ -11,7 +11,8 @@ function AddPrereqForm() {
     e.preventDefault();
     const course = { coursename, prereqname };
     const url =
-      "http://localhost:8080/api/v1/course/" +
+      "http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course/" +
+      // "http://localhost:8080/api/v1/course/" +
       coursename +
       "/course/" +
       prereqname;

@@ -86,11 +86,17 @@ public class CourseController {
             courseService.updateCourse(course);
 
         } else {
+
             throw new IllegalStateException("Student is not currently enrolled in the course");
         }
 
         return course;
 
+    }
+
+    @DeleteMapping("{courseName}")
+    public void deleteCourse(@PathVariable String courseName) {
+        courseService.removeCourse(courseName);
     }
 
     // @PutMapping("{courseId}/course/{preReqId}")
@@ -101,8 +107,14 @@ public class CourseController {
         // Course prereqCourse = courseService.getCourseById(preReqId);
         Course course = courseService.getCourseByName(courseName);
         Course prereqCourse = courseService.getCourseByName(prereqName);
-        course.prerequisites(prereqCourse);
-        courseService.updateCourse(course);
+
+        if (course.equals(prereqCourse)) {
+            throw new IllegalStateException("Course cannot be prerequisite of itself.");
+        } else {
+            course.prerequisites(prereqCourse);
+            courseService.updateCourse(course);
+        }
+
         return course;
     }
 }

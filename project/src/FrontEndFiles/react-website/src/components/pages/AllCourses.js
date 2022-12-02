@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 function AllCourses() {
     const [courses, setCourse] = useState([])
     useEffect(() => {
-        const url = "http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course";
+        const url = "https://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/course";
         // const url = "http://localhost:8080/api/v1/course";
     
         const fetchData = async () => {

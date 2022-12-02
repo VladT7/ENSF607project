@@ -36,5 +36,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  }, 
+  "proxy": "http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/"
 }

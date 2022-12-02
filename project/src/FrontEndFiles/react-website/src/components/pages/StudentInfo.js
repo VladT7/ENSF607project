@@ -11,7 +11,7 @@ function StudentInfo() {
     let navigate = useNavigate();
 
     const searchCourse = async () => {
-        const url = 'http://ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/student/students/' + userinput;
+        const url = '//ensf607project-env.eba-bv4mjdbr.us-east-1.elasticbeanstalk.com/api/v1/student/students/' + userinput;
         // const url = 'http://localhost:8080/api/v1/student/students/' + userinput;
         const response = await fetch(url, {
             method: 'GET',

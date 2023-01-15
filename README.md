@@ -1,6 +1,12 @@
 # ENSF607project
 
+## Screenshots
+<img src="1.png" >
+
 ## How to start your backend?
+The backend was previously hosted on AWS, but in the interest of not incurring any further costs associated with hosting an API, database, and front-end, it has been taken down. Please reach out to the repo owner for a demonstration / further questions.
+
+To start the project, after downloading the file:
 
 1. In MySQL, run script
 
